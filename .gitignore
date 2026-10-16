@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+*.pyc
+*.log
+.env
+.env.*
+mysql-client.json
+hotel-client.json
+client.ini
+.claude/
+.vscode/
+*.pptx

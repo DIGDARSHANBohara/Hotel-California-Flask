@@ -1,0 +1,350 @@
+.welcome-strip {
+  background: var(--primary);
+  color: white;
+  text-align: center;
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  padding: 9px 20px;
+}
+.site-header {
+  background: var(--background);
+}
+.navbar {
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.navbar nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+.navbar nav > a:not(.btn-primary) {
+  font-size: 0.875rem;
+  color: var(--text);
+}
+.portal-access {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-block: 16px;
+  font-size: 0.875rem;
+}
+.portal-access > span { color: var(--muted); }
+.portal-access nav { display: flex; flex-wrap: wrap; gap: 10px 20px; }
+.portal-access nav a { color: var(--teal-ink); font-weight: 600; }
+.navbar .login-link {
+  border-left: 1px solid var(--border);
+  padding-left: 24px;
+}
+.hero {
+  height: 600px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 24px;
+  color: white;
+}
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-position: center 54%;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgb(9 35 31 / 73%), rgb(9 35 31 / 17%) 65%, transparent);
+}
+.hero-content {
+  position: absolute;
+  z-index: 1;
+  top: 75px;
+  left: 64px;
+}
+.hero-content .eyebrow {
+  color: var(--secondary);
+  font-size: 0.75rem;
+}
+.hero h1 {
+  font-size: clamp(3.5rem, 5.9vw, 5.2rem);
+  line-height: 1.04;
+  margin: 22px 0;
+  letter-spacing: -0.035em;
+}
+.hero h1 em {
+  font-weight: 400;
+}
+.hero-content > p:not(.eyebrow) {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: #f5fffb;
+  margin-bottom: 28px;
+}
+.hero-note {
+  position: absolute;
+  right: 28px;
+  bottom: 74px;
+  z-index: 1;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  writing-mode: vertical-rl;
+}
+.search-container {
+  position: relative;
+  z-index: 2;
+  padding-inline: 40px;
+}
+.availability {
+  margin-top: -46px;
+  padding: 25px 28px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 0.85fr 1.1fr;
+  align-items: end;
+  gap: 24px;
+  box-shadow: 0 12px 35px rgb(31 41 55 / 9%);
+}
+.availability input,
+.availability select {
+  border: 0 !important;
+  background: #f7f9f8 !important;
+}
+.availability button {
+  min-height: 46px;
+}
+.amenities {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  padding-block: 48px;
+  border-bottom: 1px solid var(--border);
+  gap: 24px;
+}
+.amenities > div {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.amenities > div > span {
+  color: var(--primary);
+  font-size: 2.2rem;
+  line-height: 1;
+}
+.amenities p {
+  font-weight: 600;
+  font-size: 0.85rem;
+  margin: 0;
+}
+.amenities small {
+  display: block;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 400;
+  margin-top: 4px;
+}
+.home-section {
+  padding-block: 70px;
+}
+.offers-section {
+  background: #eff9f5;
+}
+.offer-card {
+  position: relative;
+  min-height: 420px;
+  overflow: hidden;
+  border-radius: 18px;
+  color: white;
+}
+.offer-card > img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.offer-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgb(12 33 28 / 90%), rgb(12 33 28 / 5%) 85%);
+}
+.offer-card > div {
+  position: relative;
+  z-index: 1;
+  padding: 28px;
+  padding-top: 160px;
+}
+.offer-card .eyebrow {
+  color: var(--secondary);
+  font-size: 0.7rem;
+}
+.offer-card h3 {
+  font-size: 2rem;
+}
+.offer-card p {
+  font-size: 0.9rem;
+}
+.about-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  padding-block: 80px;
+  align-items: center;
+}
+.about-section > div > p:not(.eyebrow) {
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+.site-footer {
+  background: white;
+  border-top: 1px solid var(--border);
+}
+.footer-top,
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: center;
+  padding-block: 35px;
+}
+.footer-top nav {
+  display: flex;
+  gap: 28px;
+  font-size: 0.8rem;
+}
+.footer-bottom {
+  border-top: 1px solid var(--border);
+  padding-block: 22px;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+@media (max-width: 1050px) {
+  .navbar nav {
+    gap: 16px;
+  }
+  .navbar .login-link {
+    padding-left: 16px;
+  }
+  .hero-content {
+    left: 40px;
+  }
+  .amenities {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 900px) {
+  .navbar {
+    position: relative;
+    min-height: 85px;
+  }
+  .navbar nav {
+    display: none;
+    position: absolute;
+    top: 80px;
+    right: 0;
+    padding: 24px;
+    background: white;
+    box-shadow: var(--shadow);
+    border-radius: 12px;
+    z-index: 10;
+    min-width: 220px;
+  }
+  .navbar nav.is-open {
+    display: grid;
+  }
+  .navbar .login-link {
+    border-left: 0;
+    padding-left: 0;
+  }
+  .search-container {
+    padding-inline: 20px;
+  }
+  .availability {
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+  .offers-section .grid {
+    grid-template-columns: 1fr;
+  }
+  .offer-card {
+    min-height: 320px;
+  }
+  .offer-card > div {
+    padding-top: 85px;
+  }
+  .about-section {
+    gap: 32px;
+  }
+}
+@media (max-width: 650px) {
+  .navbar {
+    gap: 12px;
+  }
+  .navbar .brand-name {
+    font-size: 0.75rem;
+  }
+  .navbar .brand-name small {
+    font-size: 0.5rem;
+    letter-spacing: 0.15em;
+  }
+  .hero {
+    height: 560px;
+    border-radius: 16px;
+  }
+  .hero-content {
+    left: 26px;
+    top: 50px;
+    right: 22px;
+  }
+  .hero h1 {
+    font-size: 3.35rem;
+  }
+  .hero-note {
+    display: none;
+  }
+  .hero::after {
+    background: rgb(9 35 31 / 48%);
+  }
+  .search-container {
+    padding-inline: 10px;
+  }
+  .availability {
+    padding: 20px;
+    gap: 16px;
+  }
+  .availability button {
+    grid-column: 1 / -1;
+  }
+  .availability .form-group:nth-child(3) {
+    grid-column: 1 / -1;
+  }
+  .amenities {
+    gap: 25px 12px;
+    padding-block: 32px;
+  }
+  .amenities > div {
+    align-items: start;
+    gap: 9px;
+  }
+  .amenities > div > span {
+    font-size: 1.8rem;
+  }
+  .home-section {
+    padding-block: 45px;
+  }
+  .about-section {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding-block: 48px;
+  }
+  .footer-top,
+  .footer-bottom {
+    flex-direction: column;
+    align-items: start;
+  }
+  .footer-top nav {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+}

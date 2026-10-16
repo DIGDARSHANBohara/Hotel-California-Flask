@@ -1,0 +1,276 @@
+/* customer / customer.css */
+.customer .sidebar {
+  border-top: 5px solid var(--primary);
+}
+.customer .app-main {
+  max-width: 1400px;
+}
+.stay-banner {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  background: var(--soft);
+  border-radius: 18px;
+  overflow: hidden;
+}
+.stay-banner > div {
+  padding: 32px;
+}
+.stay-banner img {
+  height: 100%;
+  min-height: 260px;
+  width: 100%;
+}
+.stay-banner h2 {
+  font-size: 2.5rem;
+}
+.customer .quick-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+@media (max-width: 650px) {
+  .stay-banner {
+    grid-template-columns: 1fr;
+  }
+  .stay-banner img {
+    height: 220px;
+    min-height: 0;
+  }
+}
+
+/* customer / dashboard.css */
+.upcoming-room {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.upcoming-room img {
+  width: 110px;
+  height: 110px;
+  border-radius: 12px;
+}
+@media (max-width: 500px) {
+  .upcoming-room {
+    align-items: start;
+    flex-direction: column;
+  }
+}
+
+/* customer / rooms.css */
+.results-count {
+  color: var(--muted);
+  font-size: 0.875rem;
+  margin-bottom: 20px;
+}
+.room-filters {
+  background: white;
+}
+
+/* customer / booking.css */
+.booking-layout {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+.booking-image {
+  height: 280px;
+  width: 100%;
+}
+.booking-summary {
+  position: sticky;
+  top: 24px;
+}
+@media (max-width: 1050px) {
+  .booking-layout {
+    grid-template-columns: 1fr;
+  }
+  .booking-summary {
+    position: static;
+  }
+}
+
+/* customer / reservations.css */
+.reservation-card {
+  display: grid;
+  grid-template-columns: 190px 1fr;
+}
+.reservation-card > img {
+  width: 100%;
+  height: 100%;
+  min-height: 210px;
+}
+.reservation-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 16px;
+}
+.reservation-head h3 {
+  margin: 0;
+}
+@media (max-width: 650px) {
+  .reservation-card {
+    grid-template-columns: 1fr;
+  }
+  .reservation-card > img {
+    height: 200px;
+  }
+  .reservation-head {
+    flex-wrap: wrap;
+  }
+}
+
+/* customer / payment.css */
+.payment-choice {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  border: 1px solid var(--border);
+  padding: 18px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.payment-choice:has(input:checked) {
+  border-color: var(--primary);
+  background: var(--soft);
+}
+.payment-choice small {
+  display: block;
+  color: var(--muted);
+}
+
+/* receptionist / receptionist.css */
+.receptionist {
+  background: #f6f9f8;
+}
+.receptionist .sidebar {
+  border-top: 5px solid var(--secondary);
+}
+.operation-grid {
+  display: grid;
+  grid-template-columns: 1.7fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+.room-status-tile {
+  padding: 22px;
+  border-left: 4px solid var(--primary);
+}
+.room-status-tile h3 {
+  font-family: var(--body);
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+.room-status-tile[data-status='Maintenance'] {
+  border-left-color: var(--accent);
+}
+.room-status-tile[data-status='Occupied'] {
+  border-left-color: #777faf;
+}
+.room-status-tile[data-status='Reserved'] {
+  border-left-color: #c59a56;
+}
+.activity-item {
+  padding-block: 16px;
+  border-bottom: 1px solid var(--border);
+}
+.activity-item:last-child {
+  border: 0;
+}
+.activity-item p {
+  margin-bottom: 4px;
+}
+@media (max-width: 1150px) {
+  .operation-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* admin / admin.css */
+.admin {
+  background: #f5f7f8;
+}
+.admin .sidebar {
+  background: #133d39;
+  color: white;
+  border: 0;
+}
+.admin .sidebar .brand {
+  color: white;
+}
+.admin .sidebar .brand-mark {
+  border-color: var(--secondary);
+}
+.admin .sidebar .brand-name {
+  font-size: 0.85rem;
+}
+.admin .sidebar-label,
+.admin .sidebar .muted {
+  color: #acccc7;
+}
+.admin .sidebar nav a,
+.admin .sidebar .logout {
+  color: #d6e5e2;
+}
+.admin .sidebar nav a[aria-current='page'],
+.admin .sidebar nav a:hover {
+  background: var(--primary);
+  color: white;
+}
+.admin .stat {
+  box-shadow: none;
+}
+.admin .card-heading h2 {
+  font-family: var(--body);
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+.admin .stats {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.admin .operation-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+.admin .activity-item {
+  padding-block: 13px;
+  border-bottom: 1px solid var(--border);
+}
+.admin .activity-item p {
+  margin-bottom: 4px;
+}
+.admin .activity-item:last-child {
+  border: 0;
+}
+@media (max-width: 1150px) {
+  .admin .operation-grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 650px) {
+  .admin .stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* admin / reports.css */
+.report-value {
+  font-size: 2.8rem;
+  font-weight: 600;
+  color: var(--teal-ink);
+  letter-spacing: -0.04em;
+  margin-bottom: 12px;
+}
+.report-card h2 {
+  font-size: 1.6rem;
+}
+.report-card .nav-icon {
+  color: var(--primary);
+  width: 28px;
+  height: 28px;
+  margin-bottom: 18px;
+}

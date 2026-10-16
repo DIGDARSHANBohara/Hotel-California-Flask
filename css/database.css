@@ -1,0 +1,25 @@
+.database-header { display:flex; justify-content:space-between; align-items:center; gap:20px; padding-block:28px; }
+.database-main { padding-block:24px 60px; }
+.database-intro { display:flex; justify-content:space-between; align-items:start; gap:24px; margin-bottom:22px; }
+.database-intro p { max-width:700px; }
+.database-connected { margin-top:12px; white-space:nowrap; background:var(--soft); color:var(--teal-ink); }
+.database-layout { display:grid; grid-template-columns:240px minmax(0,1fr); gap:24px; align-items:start; }
+.database-sidebar { position:sticky; top:24px; }
+.database-sidebar nav { display:grid; gap:6px; }
+.table-button { display:flex; align-items:center; justify-content:space-between; gap:12px; width:100%; background:transparent; border:0; padding:12px; border-radius:8px; color:var(--text); text-align:left; }
+.table-button[aria-current="true"] { background:var(--soft); color:var(--teal-ink); font-weight:600; }
+.table-button:hover { background:var(--soft); }
+.table-button span { border-radius:6px; padding:0 8px; background:white; font-size:0.8rem; }
+.database-filename { font:0.78rem/1.6 Consolas,monospace; overflow-wrap:anywhere; }
+.database-table-heading { display:flex; justify-content:space-between; align-items:center; gap:16px; }
+.database-table-heading h2 { margin-bottom:10px; }
+.database-query { padding:12px; border-radius:8px; background:#f5f7f8; font-family:Consolas,monospace; overflow-wrap:anywhere; }
+.database-schema { margin-top:20px; }
+.database-schema code { color:var(--teal-ink); }
+#records td { max-width:300px; white-space:nowrap; font-size:0.85rem; }
+#records table { min-width:max-content; }
+#records .table-wrap { max-height:560px; overflow:auto; }
+#records th { position:sticky; top:0; background:white; }
+summary { cursor:pointer; font-weight:600; }
+@media(max-width:800px) { .database-layout { grid-template-columns:1fr; } .database-sidebar { position:static; } .database-sidebar nav { grid-template-columns:repeat(2,minmax(0,1fr)); } .database-intro { flex-direction:column; gap:0; } }
+@media(max-width:500px) { .database-header { flex-wrap:wrap; } .database-sidebar nav { grid-template-columns:1fr; } }

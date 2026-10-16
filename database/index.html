@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Database · Hotel California</title>
+  <link rel="icon" href="../assets/images/icons/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="../css/common.css" />
+  <link rel="stylesheet" href="../css/database.css" />
+  <script src="../js/ui.js" defer></script>
+  <script src="../js/database.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="database-header container">
+    <a class="brand" href="../"><span class="brand-mark">H</span><span class="brand-name">HOTEL CALIFORNIA<small>LOCAL DATABASE</small></span></a>
+    <a class="btn-secondary" href="../admin/index.html?page=dashboard">Open Admin</a>
+  </header>
+  <main class="container database-main" id="main">
+    <div class="database-intro">
+      <div><p class="eyebrow">BEHIND EVERY STAY</p><h1>Your hotel, in tables.</h1><p class="muted">Explore the records that power this preview. Book a stay or edit a room, then refresh to see the saved changes.</p></div>
+      <span class="badge database-connected" id="connection">Connecting…</span>
+    </div>
+    <p class="notice">This viewer shows records from MySQL. Email/password login checks your stored account; payments are simulations. This viewer is read-only; edit records through the hotel screens.</p>
+    <p id="database-error" class="error" role="alert" hidden></p>
+    <div class="database-layout">
+      <aside class="card card-body database-sidebar">
+        <p class="eyebrow">TABLES</p><nav id="tables" aria-label="Database tables"></nav>
+        <hr /><p class="small muted">Database name</p><p class="database-filename" id="filename">—</p>
+        <button class="btn-secondary full-width" id="refresh" type="button">Refresh Records</button>
+      </aside>
+      <section class="stack" aria-label="Selected table">
+        <div class="card card-body">
+          <div class="database-table-heading"><div><p class="eyebrow">STORED RECORDS</p><h2 id="table-title">Reservations</h2></div><span class="badge" id="row-count">—</span></div>
+          <p class="muted" id="table-description"></p>
+          <p class="small database-query" id="query"></p>
+          <p class="small muted" id="updated" role="status"></p>
+        </div>
+        <div class="card" id="records" aria-busy="true"><p class="card-body">Loading database records…</p></div>
+        <details class="card card-body"><summary>Columns and relationships</summary><div class="database-schema" id="schema"></div></details>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Find your brighter days at Hotel California. Explore inviting rooms, poolside escapes, and seaside dining in this hotel reservation prototype."
+    />
+    <title>Hotel California — Good Stays, Brighter Days</title>
+    <link rel="icon" href="assets/images/icons/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/home.css" />
+    <script src="js/ui.js" defer></script>
+    <script src="js/auth.js" defer></script>
+    <script src="js/api.js" defer></script>
+    <script src="js/home.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="welcome-strip">A little sunshine. A little seaside. A stay to remember.</div>
+    <header class="site-header">
+      <div class="container navbar">
+        <a class="brand" href="index.html"
+          ><span class="brand-mark" aria-hidden="true">H</span
+          ><span class="brand-name">HOTEL CALIFORNIA<small>STAY A LITTLE LONGER</small></span></a
+        >
+        <button class="menu-toggle" aria-expanded="false" aria-controls="public-nav">
+          ☰ Menu
+        </button>
+        <nav id="public-nav" aria-label="Main navigation">
+          <a href="customer/index.html?page=rooms">Rooms</a><a href="#dining">Dining</a
+          ><a href="#offers">Offers</a><a href="#about">About</a
+          ><a class="login-link" id="account-link" href="customer/index.html?page=login">Log In</a
+          ><a class="btn-primary" href="customer/index.html?page=rooms">Book Now</a>
+        </nav>
+      </div>
+    </header>
+    <section class="container portal-access" aria-label="Portal login options">
+      <span id="access-status">Welcome, guest</span>
+      <nav aria-label="Choose a login role">
+        <a href="customer/index.html?page=login">Customer Login</a>
+        <a href="receptionist/index.html?page=login">Receptionist Login</a>
+        <a href="admin/index.html?page=login">Admin Login</a>
+        <a href="receptionist/index.html?page=login&amp;role=manager">Manager Login</a>
+      </nav>
+      <button class="btn btn-quiet btn-small" id="home-logout" type="button" hidden>Log Out</button>
+    </section>
+    <main id="main">
+      <section class="hero container" aria-labelledby="hero-title">
+        <img
+          class="hero-image"
+          src="assets/images/hotel/resort.jpg"
+          alt="An oceanfront resort with palm gardens and a turquoise pool"
+          width="1920"
+          height="1440"
+          fetchpriority="high"
+        />
+        <div class="hero-content">
+          <p class="eyebrow">YOUR EVERYDAY, A WORLD AWAY</p>
+          <h1 id="hero-title">Good Stays,<br /><em>Brighter Days</em></h1>
+          <p>
+            Modern comfort for every kind of traveler.<br />Beautiful rooms, unforgettable
+            experiences,<br />and a brighter tomorrow.
+          </p>
+          <a class="btn-primary" href="customer/index.html?page=rooms">Book Your Stay</a>
+        </div>
+        <span class="hero-note">Slow mornings. Endless possibilities.</span>
+      </section>
+      <div class="container search-container">
+        <form
+          class="availability card"
+          id="availability-form"
+          action="customer/index.html?page=rooms"
+          method="get"
+        >
+          <input type="hidden" name="page" value="rooms" />
+          <div class="form-group">
+            <label for="check-in">Check In</label
+            ><input id="check-in" name="checkIn" type="date" required />
+          </div>
+          <div class="form-group">
+            <label for="check-out">Check Out</label
+            ><input id="check-out" name="checkOut" type="date" required />
+          </div>
+          <div class="form-group">
+            <label for="guests">Guests</label
+            ><select id="guests" name="guests">
+              <option value="1">1 guest</option>
+              <option value="2" selected>2 guests</option>
+              <option value="3">3 guests</option>
+              <option value="4">4 guests</option>
+              <option value="6">6 guests</option>
+            </select>
+          </div>
+          <button class="btn-primary" type="submit">Search Availability</button>
+        </form>
+      </div>
+      <section class="container amenities" aria-label="Hotel highlights">
+        <div>
+          <span aria-hidden="true">◎</span>
+          <p>Stunning Locations<small>A view worth waking up for</small></p>
+        </div>
+        <div>
+          <span aria-hidden="true">◇</span>
+          <p>Exceptional Comfort<small>Thoughtful touches, always</small></p>
+        </div>
+        <div>
+          <span aria-hidden="true">♧</span>
+          <p>World-Class Dining<small>Fresh flavors. Lasting memories.</small></p>
+        </div>
+        <div>
+          <span aria-hidden="true">☼</span>
+          <p>Memorable Experiences<small>Find your kind of happy</small></p>
+        </div>
+      </section>
+      <section class="container home-section" id="rooms">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">REST COMES NATURALLY</p>
+            <h2>A room for your kind of getaway</h2>
+            <p class="muted">Settle in, stretch out, and make the moment yours.</p>
+          </div>
+          <a class="btn-secondary" href="customer/index.html?page=rooms">Explore All Rooms</a>
+        </div>
+        <div class="grid grid-3" id="featured-rooms" aria-live="polite"></div>
+      </section>
+      <section class="home-section offers-section" id="offers">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">A LITTLE SOMETHING EXTRA</p>
+              <h2>More reasons to stay</h2>
+              <p class="muted">Make room for the things you love.</p>
+            </div>
+            <span class="badge">Seasonal experiences</span>
+          </div>
+          <div class="grid grid-3">
+            <article class="offer-card">
+              <img
+                src="assets/images/rooms/villa.jpg"
+                alt="A peaceful hotel pool and terrace"
+                loading="lazy"
+                width="600"
+                height="650"
+              />
+              <div>
+                <p class="eyebrow">SUNSHINE INCLUDED</p>
+                <h3>Summer Escape</h3>
+                <p>Unhurried pool days and a room to call your own.</p>
+                <a class="btn btn-quiet" href="customer/index.html?page=rooms&type=Private+Villa"
+                  >Find Your Escape</a
+                >
+              </div>
+            </article>
+            <article class="offer-card" id="dining">
+              <img
+                src="assets/images/offers/dining.jpg"
+                alt="A seaside dining table set for a leisurely meal"
+                loading="lazy"
+                width="600"
+                height="650"
+              />
+              <div>
+                <p class="eyebrow">SAVOR THE MOMENT</p>
+                <h3>Dine &amp; Unwind</h3>
+                <p>Coastal flavors, good company, and golden evenings.</p>
+                <button class="btn btn-quiet" data-experience="dining">Explore Dining</button>
+              </div>
+            </article>
+            <article class="offer-card">
+              <img
+                src="assets/images/offers/spa.jpg"
+                alt="A tranquil spa treatment room with soft natural light"
+                loading="lazy"
+                width="600"
+                height="650"
+              />
+              <div>
+                <p class="eyebrow">TIME FOR YOU</p>
+                <h3>Relax &amp; Rejuvenate</h3>
+                <p>Switch off, breathe deep, and find your balance.</p>
+                <button class="btn btn-quiet" data-experience="spa">Discover Wellness</button>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="container about-section" id="about">
+        <div>
+          <p class="eyebrow">WELCOME TO HOTEL CALIFORNIA</p>
+          <h2>Come for the view.<br />Stay for the feeling.</h2>
+        </div>
+        <div>
+          <p>
+            A warm welcome, a soft landing, and the space to simply be. From a spontaneous weekend
+            to a long-awaited escape, we make every stay feel a little brighter.
+          </p>
+          <a class="btn-secondary" href="customer/index.html?page=rooms">Plan Your Stay</a>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container footer-top">
+        <a class="brand" href="index.html"
+          ><span class="brand-mark" aria-hidden="true">H</span
+          ><span class="brand-name">HOTEL CALIFORNIA<small>STAY A LITTLE LONGER</small></span></a
+        >
+        <nav aria-label="Guest and staff access">
+          <a href="customer/index.html?page=login">Customer Login</a
+          ><a href="receptionist/index.html?page=login">Receptionist Login</a
+          ><a href="admin/index.html?page=login">Admin Login</a
+          ><a href="receptionist/index.html?page=login&amp;role=manager">Manager Login</a>
+        </nav>
+      </div>
+      <div class="container footer-bottom">
+        <span>© <span id="year">2026</span> Hotel California</span
+        ><span>Hotel reservation demo · No real hotel bookings or charges</span>
+      </div>
+    </footer>
+  </body>
+</html>
